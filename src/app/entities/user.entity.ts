@@ -1,5 +1,13 @@
 import { User as IUser } from '../interfaces/user';
 
 export class User implements IUser {
-  constructor(public id = 0, public firstName = '', public lastName = '') {}
+  id: number;
+  firstName: string;
+  lastName: string;
+
+  constructor(data: IUser) {
+    this.id = data.id || 0;
+    this.firstName = data.firstName || '';
+    this.lastName = data.lastName || '';
+  }
 }
