@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~normalize.css';
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap&subset=cyrillic-ext');
+
+html {
+  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #f2f3f7;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1110px;
+}

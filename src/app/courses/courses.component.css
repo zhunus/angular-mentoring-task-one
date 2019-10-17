@@ -1,0 +1,7 @@
+.breadcrumbs {
+  background: #fff;
+  color: #2c2f3c;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
