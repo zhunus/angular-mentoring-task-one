@@ -1,0 +1,18 @@
+<app-breadcrumbs [crumbs]="breadcrumbs"></app-breadcrumbs>
+
+<div class="container content">
+  <app-search-control></app-search-control>
+
+  <div class="d-flex justify-content-end m-2">
+    <button class="btn btn-info">
+      <i class="fas fa-plus"></i>
+      Add course
+    </button>
+  </div>
+
+  <app-courses-list [courses]="courses"></app-courses-list>
+
+  <div class="load-more d-flex justify-content-center align-items-center">
+    load more
+  </div>
+</div>

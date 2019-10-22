@@ -1,0 +1,8 @@
+.courses {
+  padding: 0;
+  list-style: none;
+}
+
+.courses li:not(:last-child) {
+  margin-bottom: 1.7rem;
+}

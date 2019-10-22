@@ -1,0 +1,9 @@
+.search-control {
+  display: flex;
+  margin: 1.7rem auto;
+  align-items: center;
+}
+
+.search-control__input {
+  width: 25.7rem;
+}

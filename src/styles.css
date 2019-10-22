@@ -4,19 +4,69 @@
 
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap&subset=cyrillic-ext');
+
+:root {
+  --soft-blue: #577ce6;
+  --dark-sky-blue: #30b6dd;
+  --pale-grey: #f2f3f7;
+  --steel: #868996;
+  --charcoal-grey: #414452;
+  --silver: #c0c3ce;
+  --white: #ffffff;
+  --sick-green: #9bc837;
+  --cloudy-blue: #b9bdce;
+  --slate-grey: #525462;
+  --dark: #2c2f3c;
+  --black: #000000;
+  --seafoam-blue: #76cdd8;
+  --pear: #e2f86a;
+}
 
 html {
   font-size: 14px;
   font-family: 'Source Sans Pro', sans-serif;
-  background: #f2f3f7;
 }
 
 html, body {
   height: 100%;
+  background: #f2f3f7;
 }
 
-.container {
-  margin: 0 auto;
-  width: 1110px;
+.input {
+  height: 48px;
+  border: 1px solid #d9dbe3;
+  border-radius: 3px;
+  padding: 0.85rem;
+}
+
+.input--icon {
+  padding-left: 3rem;
+}
+
+.form-input {
+  position: relative;
+}
+
+.form-input > .fas {
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: 0.85rem;
+  color: #b3b5bd;
+}
+
+.btn {
+  font-weight: 600;
+}
+
+.btn-info {
+  background-color: var(--dark-sky-blue);
+  border-color: var(--dark-sky-blue)
+}
+
+.btn-success {
+  background-color: var(--sick-green);
+  border-color: var(--sick-green)
 }
