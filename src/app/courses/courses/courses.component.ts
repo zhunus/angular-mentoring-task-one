@@ -16,14 +16,15 @@ import { CoursesService } from '../../services/courses.service';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
 })
-export class CoursesComponent implements
-  OnInit,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy {
+export class CoursesComponent
+  implements
+    OnInit,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy {
   public breadcrumbs = ['Courses'];
   public courses: Course[] = [];
 
@@ -67,5 +68,4 @@ export class CoursesComponent implements
   ngOnDestroy(): void {
     console.log('ngOnDestroy');
   }
-
 }
