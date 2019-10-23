@@ -17,4 +17,8 @@ export class CoursesComponent implements OnInit {
     this.courses = this.coursesService.getCourses();
   }
 
+  addCourse() {
+    console.log('Add new course button is clicked!');
+  }
+
 }
