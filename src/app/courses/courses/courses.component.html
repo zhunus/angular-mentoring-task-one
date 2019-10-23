@@ -10,7 +10,7 @@
     </button>
   </div>
 
-  <app-courses-list [courses]="courses"></app-courses-list>
+  <app-courses-list [courses]="courses" (delete)="onDeleteCourse($event)"></app-courses-list>
 
   <div class="load-more d-flex justify-content-center align-items-center">
     load more

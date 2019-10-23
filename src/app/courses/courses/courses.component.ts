@@ -35,6 +35,10 @@ export class CoursesComponent implements
     console.log('Add new course button is clicked!');
   }
 
+  onDeleteCourse(course: Course): void {
+    console.log('Deleting course: ' + course.id);
+  }
+
   ngOnInit() {
     console.log('ngOnInit');
     this.courses = this.coursesService.getCourses();
