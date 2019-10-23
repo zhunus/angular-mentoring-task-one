@@ -5,12 +5,14 @@ import { CourseItemComponent } from './course-item/course-item.component';
 import { SearchControlComponent } from './search-control/search-control.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CoursesComponent, CourseItemComponent, SearchControlComponent, CoursesListComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [CoursesComponent]
 })

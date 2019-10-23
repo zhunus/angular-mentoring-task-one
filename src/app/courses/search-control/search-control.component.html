@@ -1,7 +1,7 @@
 <div class="search-control">
   <div class="form-input mr-3">
     <i class="fas fa-search"></i>
-    <input class="input input--icon search-control__input" type="text" />
+    <input class="input input--icon search-control__input" type="text" [(ngModel)]="searchQuery" />
   </div>
-  <button class="btn btn-success btn-lg search-control__action">Search</button>
+  <button class="btn btn-success btn-lg search-control__action" (click)="search()">Search</button>
 </div>
