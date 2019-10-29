@@ -24,4 +24,10 @@ describe('SearchControlComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should console.log statement when search', () => {
+    component.searchQuery = 'test query';
+    const result = component.search();
+    expect(result).toEqual('test query');
+  });
 });

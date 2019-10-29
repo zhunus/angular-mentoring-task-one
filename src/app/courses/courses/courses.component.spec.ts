@@ -6,6 +6,7 @@ import { CoursesListComponent } from '../courses-list/courses-list.component';
 import { FormsModule } from '@angular/forms';
 import { CourseItemComponent } from '../course-item/course-item.component';
 import { SharedModule } from '../../shared/shared.module';
+import { Course } from '../../entities/course.entity';
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;
@@ -31,5 +32,22 @@ describe('CoursesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return string on adding new course', () => {
+    const test = component.addCourse();
+    expect(test).toEqual('Add new course button is clicked!');
+  });
+
+  it('should return string on deleting course', () => {
+    const testCourse = new Course({
+      id: 1,
+      title: 'testTitle',
+      description: 'description',
+      creationDate: new Date(),
+      duration: 1000
+    });
+    const test = component.onDeleteCourse(testCourse);
+    expect(test).toEqual('Deleting course: ' + testCourse.id);
   });
 });

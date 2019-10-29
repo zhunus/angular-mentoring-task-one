@@ -12,25 +12,40 @@ describe('CoursesListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule],
-      declarations: [ CoursesListComponent, CourseItemComponent ]
-    })
-    .compileComponents();
+      declarations: [CoursesListComponent, CourseItemComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CoursesListComponent);
     component = fixture.componentInstance;
-    component.courses = [new Course({
-      id: 1,
-      title: 'Test title ',
-      description: 'test description',
-      creationDate: new Date(),
-      duration: 6000
-    })];
+    component.courses = [
+      new Course({
+        id: 1,
+        title: 'Test title ',
+        description: 'test description',
+        creationDate: new Date(),
+        duration: 6000
+      })
+    ];
+    spyOn(component.delete, 'emit');
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit delete message on delete', () => {
+    const testCourse = new Course({
+      id: 1,
+      title: 'testTitle',
+      description: 'description',
+      creationDate: new Date(),
+      duration: 1000
+    });
+    component.onDelete(testCourse);
+
+    expect(component.delete.emit).toHaveBeenCalledWith(testCourse);
   });
 });

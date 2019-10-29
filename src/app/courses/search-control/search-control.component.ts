@@ -13,8 +13,8 @@ export class SearchControlComponent implements OnInit {
   ngOnInit() {
   }
 
-  search() {
-    console.log(this.searchQuery);
+  search(): string {
+    return this.searchQuery;
   }
 
 }
