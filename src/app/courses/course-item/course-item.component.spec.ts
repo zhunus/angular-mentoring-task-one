@@ -47,4 +47,15 @@ describe('CourseComponent', () => {
 
     expect(component.delete.emit).toHaveBeenCalledWith(testCourse);
   });
+
+  it('should be tested as class', () => {
+    const courseItemComponent = new CourseItemComponent();
+    const testCourse = new Course();
+    courseItemComponent.course = testCourse;
+
+    courseItemComponent.delete.subscribe((course: Course) =>
+      expect(course).toBe(testCourse)
+    );
+    courseItemComponent.onDelete();
+  });
 });
