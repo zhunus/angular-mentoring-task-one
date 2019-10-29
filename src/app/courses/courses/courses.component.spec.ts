@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CourseItemComponent } from '../course-item/course-item.component';
 import { SharedModule } from '../../shared/shared.module';
 import { Course } from '../../entities/course.entity';
+import { CoursesService } from '../../services/courses.service';
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;
@@ -48,6 +49,20 @@ describe('CoursesComponent', () => {
       duration: 1000
     });
     const test = component.onDeleteCourse(testCourse);
+    expect(test).toEqual('Deleting course: ' + testCourse.id);
+  });
+
+  it('should work as class testing', () => {
+    const coursesService = new CoursesService();
+    const coursesComponent = new CoursesComponent(coursesService);
+    expect(coursesComponent.addCourse()).toEqual('Add new course button is clicked!');
+  });
+
+  it('should delete course', () => {
+    const coursesService = new CoursesService();
+    const coursesComponent = new CoursesComponent(coursesService);
+    const testCourse = new Course();
+    const test = coursesComponent.onDeleteCourse(testCourse);
     expect(test).toEqual('Deleting course: ' + testCourse.id);
   });
 });
