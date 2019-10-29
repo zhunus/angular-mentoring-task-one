@@ -1,11 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { CoursesModule } from './courses/courses.module';
+import { FooterComponent } from './footer/footer.component';
+import { LogoComponent } from './logo/logo.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CoursesModule
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        LogoComponent
       ],
     }).compileComponents();
   }));
@@ -22,10 +32,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-mentoring-task-one');
   });
 
-  it('should render title', () => {
+  it('should render header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-mentoring-task-one app is running!');
+    expect(compiled.querySelector('header')).toBeDefined();
   });
 });

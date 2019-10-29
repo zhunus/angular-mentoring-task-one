@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoursesListComponent } from './courses-list.component';
+import { CourseItemComponent } from '../course-item/course-item.component';
+import { Course } from '../../entities/course.entity';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('CoursesListComponent', () => {
   let component: CoursesListComponent;
@@ -8,7 +11,8 @@ describe('CoursesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoursesListComponent ]
+      imports: [SharedModule],
+      declarations: [ CoursesListComponent, CourseItemComponent ]
     })
     .compileComponents();
   }));
@@ -16,6 +20,13 @@ describe('CoursesListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CoursesListComponent);
     component = fixture.componentInstance;
+    component.courses = [new Course({
+      id: 1,
+      title: 'Test title ',
+      description: 'test description',
+      creationDate: new Date(),
+      duration: 6000
+    })];
     fixture.detectChanges();
   });
 

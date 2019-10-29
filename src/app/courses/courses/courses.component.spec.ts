@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoursesComponent } from './courses.component';
+import { SearchControlComponent } from '../search-control/search-control.component';
+import { CoursesListComponent } from '../courses-list/courses-list.component';
+import { FormsModule } from '@angular/forms';
+import { CourseItemComponent } from '../course-item/course-item.component';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;
@@ -8,9 +13,14 @@ describe('CoursesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoursesComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule, SharedModule],
+      declarations: [
+        CoursesComponent,
+        SearchControlComponent,
+        CoursesListComponent,
+        CourseItemComponent
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
