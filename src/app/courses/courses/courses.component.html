@@ -10,9 +10,17 @@
     </button>
   </div>
 
-  <app-courses-list [courses]="courses" (delete)="onDeleteCourse($event)"></app-courses-list>
+  <div *ngIf="courses.length > 0">
+    <app-courses-list
+      [courses]="courses"
+      (delete)="onDeleteCourse($event)"
+    ></app-courses-list>
 
-  <div class="load-more d-flex justify-content-center align-items-center">
-    load more
+    <div class="load-more d-flex justify-content-center align-items-center">
+      load more
+    </div>
+  </div>
+  <div *ngIf="courses.length === 0" class="no-data d-flex justify-content-center align-items-center">
+    No data. Feel free to add new course
   </div>
 </div>
