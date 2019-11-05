@@ -6,6 +6,7 @@ export class Course implements ICourse {
   creationDate = new Date();
   duration = 0;
   description = '';
+  topRated = false;
 
   constructor(data?: ICourse) {
     if (data) {
@@ -14,6 +15,7 @@ export class Course implements ICourse {
       this.creationDate = data.creationDate || new Date();
       this.duration = data.duration || 0;
       this.description = data.description || '';
+      this.topRated = data.topRated || false;
     }
   }
 }

@@ -29,3 +29,17 @@
   line-height: 1.71;
   color: var(--slate-grey);
 }
+
+.top-rated {
+  background-color: var(--success);
+}
+
+.top-rated .course-title,
+.top-rated .course-meta,
+.top-rated .course-description {
+  color: var(--white);
+}
+
+.top-rated .fa-star {
+  color: var(--yellow);
+}
