@@ -2,7 +2,7 @@
   <div class="course-info">
     <div class="d-flex justify-content-between align-items-center">
       <h2 class="course-title">
-        {{ course.title }}
+        {{ course.title | uppercase }}
         <i *ngIf="course.topRated" class="fas fa-star"></i>
       </h2>
       <div class="course-meta d-flex justify-content-end align-items-center">
