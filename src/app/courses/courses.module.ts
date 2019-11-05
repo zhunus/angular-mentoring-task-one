@@ -6,9 +6,10 @@ import { SearchControlComponent } from './search-control/search-control.componen
 import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightNewDirective } from './highlight-new.directive';
 
 @NgModule({
-  declarations: [CoursesComponent, CourseItemComponent, SearchControlComponent, CoursesListComponent],
+  declarations: [CoursesComponent, CourseItemComponent, SearchControlComponent, CoursesListComponent, HighlightNewDirective],
   imports: [
     CommonModule,
     SharedModule,
