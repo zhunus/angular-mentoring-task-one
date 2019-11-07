@@ -67,4 +67,13 @@ describe('CoursesComponent', () => {
     const test = coursesComponent.onDeleteCourse(testCourse);
     expect(test).toEqual('Deleting course: ' + testCourse.id);
   });
+
+  it('onSearch should set filter field', () => {
+    const coursesService = new CoursesService();
+    const coursesComponent = new CoursesComponent(coursesService);
+
+    coursesComponent.onSearch('test');
+
+    expect(coursesComponent.filter).toEqual('test');
+  });
 });
