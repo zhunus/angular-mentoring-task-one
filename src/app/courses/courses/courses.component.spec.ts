@@ -8,6 +8,7 @@ import { CourseItemComponent } from '../course-item/course-item.component';
 import { SharedModule } from '../../shared/shared.module';
 import { Course } from '../../entities/course.entity';
 import { CoursesService } from '../../services/courses.service';
+import { HighlightNewDirective } from '../highlight-new.directive';
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;
@@ -20,7 +21,8 @@ describe('CoursesComponent', () => {
         CoursesComponent,
         SearchControlComponent,
         CoursesListComponent,
-        CourseItemComponent
+        CourseItemComponent,
+        HighlightNewDirective
       ]
     }).compileComponents();
   }));

@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CourseItemComponent } from './course-item.component';
 import { SharedModule } from '../../shared/shared.module';
 import { Course } from '../../entities/course.entity';
+import { HighlightNewDirective } from '../highlight-new.directive';
 
 describe('CourseComponent', () => {
   let component: CourseItemComponent;
@@ -11,7 +12,7 @@ describe('CourseComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule],
-      declarations: [CourseItemComponent]
+      declarations: [CourseItemComponent, HighlightNewDirective]
     }).compileComponents();
   }));
 

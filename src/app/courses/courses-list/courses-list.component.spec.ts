@@ -4,6 +4,7 @@ import { CoursesListComponent } from './courses-list.component';
 import { CourseItemComponent } from '../course-item/course-item.component';
 import { Course } from '../../entities/course.entity';
 import { SharedModule } from '../../shared/shared.module';
+import { HighlightNewDirective } from '../highlight-new.directive';
 
 describe('CoursesListComponent', () => {
   let component: CoursesListComponent;
@@ -12,7 +13,7 @@ describe('CoursesListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule],
-      declarations: [CoursesListComponent, CourseItemComponent]
+      declarations: [CoursesListComponent, CourseItemComponent, HighlightNewDirective]
     }).compileComponents();
   }));
 

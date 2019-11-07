@@ -18,7 +18,6 @@ export class HighlightNewDirective implements OnInit {
   ngOnInit(): void {
     const currentDate = new Date();
     const diff = differenceInDays(currentDate, this.createdDate);
-    console.log(diff);
     if (this.createdDate < currentDate && diff < 14) {
       this.addBorder('var(--success)');
     }
