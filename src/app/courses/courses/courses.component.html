@@ -1,7 +1,7 @@
 <app-breadcrumbs [crumbs]="breadcrumbs"></app-breadcrumbs>
 
 <div class="container content">
-  <app-search-control></app-search-control>
+  <app-search-control (search)="onSearch($event)"></app-search-control>
 
   <div class="d-flex justify-content-end m-2">
     <button class="btn btn-info" (click)="addCourse()">
@@ -14,6 +14,7 @@
     <app-courses-list
       [courses]="courses"
       (delete)="onDeleteCourse($event)"
+      [filterValue]="filter"
     ></app-courses-list>
 
     <div class="load-more d-flex justify-content-center align-items-center">

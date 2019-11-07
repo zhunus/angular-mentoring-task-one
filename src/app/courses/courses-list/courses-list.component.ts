@@ -10,16 +10,17 @@ export class CoursesListComponent implements OnInit {
   @Input()
   courses: Course[];
 
+  @Input()
+  filterValue = '';
+
   @Output()
   public delete: EventEmitter<Course> = new EventEmitter<Course>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onDelete(course: Course) {
     this.delete.emit(course);
   }
-
 }

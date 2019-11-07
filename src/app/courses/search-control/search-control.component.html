@@ -1,7 +1,17 @@
-<div class="search-control">
-  <div class="form-input mr-3">
-    <i class="fas fa-search"></i>
-    <input class="input input--icon search-control__input" type="text" [(ngModel)]="searchQuery" />
+<form (ngSubmit)="onSearch()">
+  <div class="search-control">
+    <div class="form-input mr-3">
+      <i class="fas fa-search"></i>
+      <input
+        type="text"
+        name="searchQuery"
+        class="input input--icon search-control__input"
+        placeholder="Example: Angular..."
+        [(ngModel)]="searchQuery"
+      />
+    </div>
+    <button type="submit" class="btn btn-success btn-lg search-control__action">
+      Search
+    </button>
   </div>
-  <button class="btn btn-success btn-lg search-control__action" (click)="search()">Search</button>
-</div>
+</form>

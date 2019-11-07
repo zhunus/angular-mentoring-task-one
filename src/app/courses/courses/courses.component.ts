@@ -10,6 +10,7 @@ import { CoursesService } from '../../services/courses.service';
 export class CoursesComponent implements OnInit {
   public breadcrumbs = ['Courses'];
   public courses: Course[] = [];
+  public filter = '';
 
   constructor(private coursesService: CoursesService) {}
 
@@ -23,5 +24,9 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
     this.courses = this.coursesService.getCourses();
+  }
+
+  onSearch(searchQuery: string) {
+    this.filter = searchQuery;
   }
 }
