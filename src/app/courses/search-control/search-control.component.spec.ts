@@ -10,9 +10,8 @@ describe('SearchControlComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [ SearchControlComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchControlComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -26,8 +25,12 @@ describe('SearchControlComponent', () => {
   });
 
   it('should console.log statement when search', () => {
-    component.searchQuery = 'test query';
-    const result = component.search();
-    expect(result).toEqual('test query');
+    const searchQuery = 'test query';
+    const spy = spyOn(component.search, 'emit');
+
+    component.searchQuery = searchQuery;
+    component.onSearch();
+
+    expect(spy).toHaveBeenCalledWith(searchQuery);
   });
 });
