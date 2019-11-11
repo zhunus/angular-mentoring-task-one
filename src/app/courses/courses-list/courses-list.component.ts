@@ -10,9 +10,6 @@ export class CoursesListComponent implements OnInit {
   @Input()
   courses: Course[];
 
-  @Input()
-  filterValue = '';
-
   @Output()
   public delete: EventEmitter<Course> = new EventEmitter<Course>();
 

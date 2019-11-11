@@ -12,9 +12,8 @@
 
   <div *ngIf="courses.length > 0">
     <app-courses-list
-      [courses]="courses"
+      [courses]="courses | filter: filter"
       (delete)="onDeleteCourse($event)"
-      [filterValue]="filter"
     ></app-courses-list>
 
     <div class="load-more d-flex justify-content-center align-items-center">
