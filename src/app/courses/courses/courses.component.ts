@@ -18,8 +18,8 @@ export class CoursesComponent implements OnInit {
     return 'Add new course button is clicked!';
   }
 
-  onDeleteCourse(course: Course): string {
-    return 'Deleting course: ' + course.id;
+  onDeleteCourse(course: Course): void {
+    this.coursesService.removeCourse(course.id);
   }
 
   ngOnInit() {
