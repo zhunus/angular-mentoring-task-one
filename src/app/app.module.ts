@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
 import { CoursesModule } from './courses/courses.module';
 import { appRoutes } from './app.routes';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { appRoutes } from './app.routes';
   imports: [
     BrowserModule,
     CoursesModule,
+    AuthModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
