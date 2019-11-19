@@ -27,3 +27,7 @@ header {
   background: transparent;
   cursor: pointer;
 }
+
+.user a {
+  color: #fff;
+}

@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
+import { AuthorizationService } from '../services/authorization.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnChanges {
+  username = '';
 
-  constructor() { }
+  constructor(private authorizationService: AuthorizationService) {}
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.username = this.authorizationService.getUserInfo();
   }
-
 }

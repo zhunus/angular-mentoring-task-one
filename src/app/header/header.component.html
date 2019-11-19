@@ -3,10 +3,14 @@
     <div class="header-content">
       <app-logo></app-logo>
       <div class="user">
-        <div>
+        <div *ngIf="username">
           <i class="fas fa-user"></i>
-          User login
+          {{ username }}
         </div>
+        <a *ngIf="!username" [routerLink]="['login']">
+          <i class="fas fa-user"></i>
+          Login
+        </a>
         <button class="logout">
           <i class="fas fa-user"></i>
           Log off

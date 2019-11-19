@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorizationService } from '../../services/authorization.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  public login = '';
+  public password = '';
 
-  constructor() { }
+  constructor(private authorizationService: AuthorizationService, private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  submit() {
+    this.authorizationService.login(this.login, this.password);
+    this.router.navigateByUrl('/courses');
   }
-
 }
