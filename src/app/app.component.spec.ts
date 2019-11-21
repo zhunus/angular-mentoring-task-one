@@ -4,19 +4,19 @@ import { HeaderComponent } from './header/header.component';
 import { CoursesModule } from './courses/courses.module';
 import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routes';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        CoursesModule
-      ],
+      imports: [CoursesModule, RouterModule.forRoot(appRoutes)],
       declarations: [
         AppComponent,
         HeaderComponent,
         FooterComponent,
         LogoComponent
-      ],
+      ]
     }).compileComponents();
   }));
 

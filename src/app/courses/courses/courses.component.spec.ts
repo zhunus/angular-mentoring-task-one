@@ -42,18 +42,6 @@ describe('CoursesComponent', () => {
     expect(test).toEqual('Add new course button is clicked!');
   });
 
-  it('should return string on deleting course', () => {
-    const testCourse = new Course({
-      id: 1,
-      title: 'testTitle',
-      description: 'description',
-      creationDate: new Date(),
-      duration: 1000
-    });
-    const test = component.onDeleteCourse(testCourse);
-    expect(test).toEqual('Deleting course: ' + testCourse.id);
-  });
-
   it('should work as class testing', () => {
     const coursesService = new CoursesService();
     const coursesComponent = new CoursesComponent(coursesService);
@@ -62,10 +50,11 @@ describe('CoursesComponent', () => {
 
   it('should delete course', () => {
     const coursesService = new CoursesService();
+    const coursesCount = coursesService.getCourses().length;
     const coursesComponent = new CoursesComponent(coursesService);
     const testCourse = new Course();
-    const test = coursesComponent.onDeleteCourse(testCourse);
-    expect(test).toEqual('Deleting course: ' + testCourse.id);
+    coursesComponent.onDeleteCourse(testCourse);
+    expect(coursesService.getCourses().length).toEqual(coursesCount - 1);
   });
 
   it('onSearch should set filter field', () => {

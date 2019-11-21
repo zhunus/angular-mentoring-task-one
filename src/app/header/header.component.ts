@@ -1,4 +1,4 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { AuthorizationService } from '../services/authorization.service';
 
 @Component({
@@ -6,12 +6,18 @@ import { AuthorizationService } from '../services/authorization.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnChanges {
+export class HeaderComponent implements DoCheck {
   username = '';
+  isAuthorized = false;
 
   constructor(private authorizationService: AuthorizationService) {}
 
-  ngOnChanges() {
+  ngDoCheck() {
     this.username = this.authorizationService.getUserInfo();
+    this.isAuthorized = this.authorizationService.isAuthenticated();
+  }
+
+  logout() {
+    this.authorizationService.logout();
   }
 }
