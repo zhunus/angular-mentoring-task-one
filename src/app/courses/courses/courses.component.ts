@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../../entities/course.entity';
 import { CoursesService } from '../../services/courses.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -12,10 +13,10 @@ export class CoursesComponent implements OnInit {
   public courses: Course[] = [];
   public filter = '';
 
-  constructor(private coursesService: CoursesService) {}
+  constructor(private coursesService: CoursesService, private router: Router) {}
 
-  addCourse(): string {
-    return 'Add new course button is clicked!';
+  addCourse(): void {
+    this.router.navigateByUrl('/courses/new');
   }
 
   onDeleteCourse(course: Course): void {

@@ -1,0 +1,31 @@
+.new-course-wrapper {
+  width: 731px;
+  border-radius: 8px;
+  box-shadow: 0 1px 24px 0 rgba(18, 21, 35, 0.08);
+  background-color: #ffffff;
+  padding: 24px;
+  margin: 24px auto;
+}
+
+.new-course-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--dark);
+  margin-bottom: 22px;
+}
+
+.required {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.19px;
+  text-align: right;
+  color: var(--battleship-grey);
+}
+
+.form-control {
+  height: 36px;
+  border-radius: 3px;
+  border: solid 1px var(--pale-grey);
+  background-color: #ffffff;
+}
