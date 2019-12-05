@@ -12,10 +12,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CourseNewComponent } from './course-new/course-new.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import { CourseEditComponent } from './course-edit/course-edit.component';
+import { AuthGuard } from '../shared/guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'courses/new', component: CourseNewComponent},
-  { path: 'courses/:id', component: CourseEditComponent},
+  { path: 'courses/new', component: CourseNewComponent, canActivate: [AuthGuard]},
+  { path: 'courses/:id', component: CourseEditComponent, canActivate: [AuthGuard]},
   { path: 'courses', component: CoursesComponent },
 ];
 
