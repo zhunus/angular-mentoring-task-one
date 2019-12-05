@@ -1,0 +1,14 @@
+.required {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.19px;
+  text-align: right;
+  color: var(--battleship-grey);
+}
+
+input.form-control {
+  height: 36px;
+  border-radius: 3px;
+  border: solid 1px var(--pale-grey);
+  background-color: #ffffff;
+}

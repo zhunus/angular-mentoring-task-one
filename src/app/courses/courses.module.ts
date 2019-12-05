@@ -10,10 +10,12 @@ import { HighlightNewDirective } from './highlight-new.directive';
 import { CourseComponent } from './course/course.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CourseNewComponent } from './course-new/course-new.component';
+import { CourseFormComponent } from './course-form/course-form.component';
+import { CourseEditComponent } from './course-edit/course-edit.component';
 
 const routes: Routes = [
   { path: 'courses/new', component: CourseNewComponent},
-  { path: 'courses/:id', component: CourseComponent},
+  { path: 'courses/:id', component: CourseEditComponent},
   { path: 'courses', component: CoursesComponent },
 ];
 
@@ -25,7 +27,9 @@ const routes: Routes = [
     CoursesListComponent,
     HighlightNewDirective,
     CourseComponent,
-    CourseNewComponent
+    CourseNewComponent,
+    CourseFormComponent,
+    CourseEditComponent
   ],
   imports: [CommonModule, SharedModule, FormsModule, RouterModule.forChild(routes)],
   exports: [CoursesComponent]

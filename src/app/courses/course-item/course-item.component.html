@@ -20,7 +20,7 @@
   </div>
   <div class="course-actions">
     <div class="d-flex justify-content-center">
-      <button class="btn btn-info mr-2">
+      <button [routerLink]="['/courses/', course.id]" class="btn btn-info mr-2">
         <i class="fas fa-pen"></i>
         Edit
       </button>
